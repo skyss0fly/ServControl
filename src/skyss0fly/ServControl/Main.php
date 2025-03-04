@@ -6,8 +6,7 @@ use pocketmine\plugin\PluginBase;
 use ServControl\GamemodeManager;
 
 class Main {
-
-// Work in progress
-
-
+function __construct(){
+$gamemodeManager = new GamemodeManager($this);
+}
 }
