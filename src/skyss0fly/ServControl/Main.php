@@ -1,12 +1,19 @@
 <?php
+
 namespace skyss0fly\ServControl;
 
 use pocketmine\plugin\PluginBase;
 
-use ServControl\GamemodeManager;
+class Main extends PluginBase {
 
-class Main {
-function __construct(){
-$gamemodeManager = new GamemodeManager($this);
-}
+    private GamemodeManager $gamemodeManager;
+
+    public function onEnable(): void {
+        $this->gamemodeManager = new GamemodeManager($this);
+        $this->getLogger()->info("ServControl plugin enabled!");
+    }
+
+    public function getGamemodeManager(): GamemodeManager {
+        return $this->gamemodeManager;
+    }
 }
