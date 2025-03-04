@@ -4,3 +4,12 @@ api: 5.0.0
 version: 1.21.70
 main: skyss0fly\ServControl\Main
 
+commands: 
+ auth:
+  description: Login or Register to the Server
+  permission: ServControl.Auth
+
+permissions:
+ ServControl.Auth:
+  description: Utilise the Auth Command
+  default: true
