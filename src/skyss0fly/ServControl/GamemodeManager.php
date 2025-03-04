@@ -7,7 +7,7 @@ use pocketmine\Server;
 
 class GamemodeManager {
 
-    private string $defaultGamemode;
+    private string $defaultGamemode = $this->getConfig()->get("DefaultGamemode");
 
     public function __construct(string $defaultGamemode) {
         $this->defaultGamemode = $defaultGamemode;
