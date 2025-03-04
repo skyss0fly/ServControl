@@ -9,7 +9,7 @@ use pocketmine\Player;
 
 class AuthCommand extends PluginBase {
 
-    private $dataFile = 'plugins/AuthPlugin/resources/users.json';
+    private $dataFile = 'plugins/ServControl/resources/users.json';
     private $loggedInPlayers = [];
 
     // Register command handler
