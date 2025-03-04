@@ -10,6 +10,8 @@ class Main extends PluginBase {
 
     public function onEnable(): void {
         $this->gamemodeManager = new GamemodeManager($this);
+        $this->authCommand = new AuthCommand($this);
+        
         $this->getLogger()->info("ServControl plugin enabled!");
     }
 
