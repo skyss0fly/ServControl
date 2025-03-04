@@ -2,35 +2,33 @@
 namespace skyss0fly\ServControl;
 
 use pocketmine\plugin\PluginBase;
-use pocketmine\Player;
+use pocketmine\player\Player;
+use pocketmine\Server;
 
 class GamemodeManager {
 
-public $defaultGamemode;
+    private string $defaultGamemode;
 
-  function __construct($defaultGamemode){
-$this->defaultGamemode = $defaultGamemode;
-    $this->defaultGamemode = $this->getConfig()->get("DefaultGamemode");    
-  }
-  
-  public function getDefaultGamemode(): bool {
-return $this->defaultGamemode;
-  }
+    public function __construct(string $defaultGamemode) {
+        $this->defaultGamemode = $defaultGamemode;
+    }
 
-  /*
-  FOR LATER USAGE
-public function setDefaultGamemode(string $str) {
-$this->defaultGamemode = $str;
-}
-  */
-public function setPlayerToGamemode(string $player, string $gamemode){
-if (!$player instanceof Player) {
-return false;
-}
-else {
-// set players gamemode
-}
-}
-}
+    public function getDefaultGamemode(): string {
+        return $this->defaultGamemode;
+    }
 
+ /*
+ For Later Use
+  public function setDefaultGamemode(string $gamemode): void {
+        $this->defaultGamemode = $gamemode;
+    }
+*/
+    public function setPlayerToGamemode(Player $player, int $gamemode): bool {
+        if (!$player->isOnline()) {
+            return false;
+        }
+        $player->setGamemode($gamemode);
+        return true;
+    }
+}
 ?>
